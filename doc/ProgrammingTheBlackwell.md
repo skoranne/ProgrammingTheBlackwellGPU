@@ -12,6 +12,11 @@ Unified memory: Features high-bandwidth unified memory for efficient processing.
 Advanced networking: Integrates advanced networking capabilities for high-speed communication.
 Context within Hot Chips: The talk occurred during the "Machine Learning 2" session on the final day of the conference, Tuesday, August 26, 2025. 
 
+
+# Using NVIDIA Sync to Setup the DGX Dashboard
+Using the provided App we get the connection to our DGX
+
+
 ## Using ISO standardized programming languages
 ## Sandeep Koranne (C) 2025. All rights reserved.
 
