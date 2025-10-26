@@ -15,6 +15,8 @@ Context within Hot Chips: The talk occurred during the "Machine Learning 2" sess
 
 # Using NVIDIA Sync to Setup the DGX Dashboard
 Using the provided App we get the connection to our DGX
+![DGX Dashboard](https://github.com/skoranne/ProgrammingTheBlackwellGPU/blob/master/doc/images/DGX_DASHBOARD.jpg)
+
 
 
 ## Using ISO standardized programming languages
