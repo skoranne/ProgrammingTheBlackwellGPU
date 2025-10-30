@@ -6,8 +6,12 @@
 program main
   use iso_fortran_env
   implicit none
-  !integer,parameter :: mydp = real64 !selected_real_kind(16)
+  #ifdef __INTEL_COMPILER  
   integer,parameter :: mydp = real128 !selected_real_kind(16)
+  #else
+  !integer,parameter :: mydp = real64 !selected_real_kind(16)
+  integer,parameter :: mydp = 8 !selected_real_kind(16)
+  #endif
   real(kind=mydp) :: x,y,p,s
   real(mydp),parameter :: PI = 4.0_mydp*atan(1.0_mydp)
   integer :: i
