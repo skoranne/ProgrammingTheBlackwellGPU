@@ -67,3 +67,10 @@ program main
   c = a*b
   call c%write()
 end program main
+
+ ! [lo:             5  hi:            10  ]
+ ! [lo:             7  hi:             8  ]
+ ! [lo:             5  hi:            10  ]
+ ! [lo:             3  hi:             3  ]
+ ! [lo:             5  hi:            10  ]
+ ! [lo:             7  hi:             8  ]
