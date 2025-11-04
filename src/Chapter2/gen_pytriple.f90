@@ -1,3 +1,6 @@
+!!! File    : gen_pytriple.f90
+!!! Author  : Sandeep Koranne (C)
+!!! Purpose : Originally, to check the s/(a+b+c), 
 !!! Example code to show List comprehensions in Fortran
 module PythagoreanTriple
   type Triple
