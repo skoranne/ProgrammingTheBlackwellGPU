@@ -62,6 +62,40 @@ contains
     beta = 2.0_real64/norm_x2
     H = H - (beta)*O
   end subroutine HH2D
+  !> Compute the Householder reflection matrix.
+  !>
+  !> This function constructs a Householder reflection matrix H such that when applied
+  !> to the input vector x, it zeros out all elements from index k+1 to m, while
+  !> preserving the first k-1 elements. The transformation is defined as:
+  !>   H = I - βvvᵀ
+  !> where v is the Householder vector and β = 2 / (vᵀv).
+  !>
+  !> The algorithm chooses the sign of the norm to avoid numerical cancellation
+  !> and returns the identity matrix if the norm of the subvector is below machine
+  !> precision (1.0e-12).
+  !>
+  !> @param x Input vector of length m (1-based indexing), intent(in)
+  !> @param k Column index (1-based) from which to start the Householder transformation (intent(in))
+  !> @return H Householder reflection matrix of size m×m (result)
+  !>
+  !> @pre x must be a real vector of at least k elements
+  !> @pre k must be between 1 and> @post H is an orthogonal matrix (H^T * H = I)
+  !> @post H * x = (x₁, x₂, ..., xₖ, 0, 0, ..., 0)ᵀ
+  !>
+  !> @example
+  !> For x = [1.0, 2.0, 3.0, 4.0] and k = 2:
+  !>   - The subvector [2.0, 3.0, 4.0] is reflected onto a multiple of e₂
+  !>   - Resulting H will zero out elements 3 and 4 of x
+  !>
+  !> @see Householder transformation, QR decomposition, orthogonal matrices
+  !>
+  !> @author Sandeep Koranne
+  !> @date 11/13/2025
+  !> @version 1.0
+  !> @since 2025
+  !>
+  !> @note This implementation follows standard numerical linear algebra practices.
+  !>       It is used in QR decomposition algorithms to introduce zeros below the diagonal.
 
   function HHReflector(x, k) result(H)
     implicit none
